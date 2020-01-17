@@ -6,7 +6,7 @@ C++不像java，在异常类中有提供堆栈跟踪功能，C++标准库中的s
 在具体的实现之前，我们先来看些前提知识：  
 
 ## 获取堆栈信息
-首先应该考虑的是我们该如何获取到堆栈信息？在Linux平台上提供了如下API用来获取和查看堆栈信息 ***[1]***: 
+首先应该考虑的是我们该如何获取到堆栈信息？在Linux平台上提供了如下API用来获取和查看堆栈信息 **[1]**: 
 ``` C++
 #include <execinfo.h>
 
@@ -16,7 +16,7 @@ char **backtrace_symbols(void *const *buffer, int size);
 
 void backtrace_symbols_fd(void *const *buffer, int size, int fd);
 ```
-backtrace函数用于获取堆栈的地址信息，backtrace_symbols函数把堆栈地址翻译成我们易识别的字符串， backtrace_symbols_fd函数则把字符串堆栈信息输出到文件中 ***[2]***，这几个函数详细的介绍、使用和注意事项详见参考文献 ***[2]***。
+backtrace函数用于获取堆栈的地址信息，backtrace_symbols函数把堆栈地址翻译成我们易识别的字符串， backtrace_symbols_fd函数则把字符串堆栈信息输出到文件中 **[2]**，这几个函数详细的介绍、使用和注意事项详见参考文献 **[2]**。
 
 我们来简单使用下backtrace，看获取到的堆栈信息是什么样的：
 ``` C++
@@ -58,7 +58,7 @@ $ ./test.out
 下面解释括号中“奇怪的函数名”和如何将其还原
 
 ## mangle和demangle
-C++程序在编译时，程序中的标识符（变量名、函数名）会被编译器修改，转换成C++ ABI(Application Binary Interface, 应用二进制接口)标识符，这个过程称为mangle；相反由C++ ABI标识符转换成源码中标识符的过程称为demangle ***[3]***。
+C++程序在编译时，程序中的标识符（变量名、函数名）会被编译器修改，转换成C++ ABI(Application Binary Interface, 应用二进制接口)标识符，这个过程称为mangle；相反由C++ ABI标识符转换成源码中标识符的过程称为demangle **[3]**。
 所以“_Z14test_backtracev”这样奇怪的函数名其实是C++ ABI标识符，根据编译器g++的命名规则解析如下：_Z开头表示函数，后面14表示函数名长度，test_backtrace则是真的函数名，最后的v表示返回值是void  
 
 使用<cxxabi.h>中提供的abi::__cxa_demangle()进行demangle
