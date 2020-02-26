@@ -320,7 +320,7 @@ void level_order(){
 }
 ```
 
-完整代码见：[完全二叉树](https://github.com/liuyunian/DataStructure-Algorithm/blob/master/BinaryTree/CompleteBinaryTree.h)、[二叉树](https://github.com/liuyunian/DataStructure-Algorithm/blob/master/BinaryTree/BinaryTree.h)
+完整代码见：[https://github.com/liuyunian/DataStructure-Algorithm/blob/master/BinaryTree/CompleteBinaryTree.h](https://github.com/liuyunian/DataStructure-Algorithm/blob/master/BinaryTree/CompleteBinaryTree.h)、[https://github.com/liuyunian/DataStructure-Algorithm/blob/master/BinaryTree/BinaryTree.h](https://github.com/liuyunian/DataStructure-Algorithm/blob/master/BinaryTree/BinaryTree.h)
 
 # 线索二叉树
 线索二叉树不太常用，这里简单介绍下：  
